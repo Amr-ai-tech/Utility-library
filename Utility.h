@@ -112,6 +112,14 @@ public:
 		}
 	}
 
+	static void Fill_Array_With_Random_Numbers(int arr[], int size,int from , int to )
+	{
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = random_number(from, to);
+		}
+	}
+
 	static void Print_Array(int arr[], int size)
 	{
 		for (int i = 0; i < size; i++)
@@ -128,11 +136,11 @@ public:
 		}
 	}
 
-	static void Fill_Array_With_Random_Words(string arr[], int size, type t)
+	static void Fill_Array_With_Random_Words(string arr[], int size, type t, int length)
 	{
 		for (int i = 0; i < size; i++)
 		{
-			arr[i] = gen_word(t, 4);
+			arr[i] = gen_word(t, length);
 		}
 	}
 
@@ -144,6 +152,89 @@ public:
 		}
 	}
 
+	static void swap(int& x, int& y)
+	{
+		int temp;
+		temp = x;
+		x = y;
+		y = temp;
+	}
+
+	static void swap(double& x, double& y)
+	{
+		double temp;
+		temp = x;
+		x = y;
+		y = temp;
+	}
+
+	static void swap(bool& x, bool& y)
+	{
+		bool temp;
+		temp = x;
+		x = y;
+		y = temp;
+	}
+
+	static void swap(char& x, char& y)
+	{
+		char temp;
+		temp = x;
+		x = y;
+		y = temp;
+	}
+
+	static void swap(string& x, string& y)
+	{
+		string temp;
+		temp = x;
+		x = y;
+		y = temp;
+	}
+
+	static void Shuffle_Array(int arr[], int length)
+	{
+		for (int i = 0; i < length; i++)
+		{
+			swap(arr[i] , arr[random_number(0, length - 1)]);
+		}
+	}
+
+	static void Shuffle_Array(string arr[], int length)
+	{
+		for (int i = 0; i < length; i++)
+		{
+			swap(arr[i], arr[random_number(0, length - 1)]);
+		}
+	}
+
+	static string tabs(int num)
+	{
+		string tab = "";
+		for (int i = 0; i < num; i++)
+		{
+			tab += " ";
+		}
+		return tab;
+	}
+
+	static string Encrypt_Text(string text)
+	{
+		for (int i = 0; i < text.length(); i++)
+		{
+			text[i] = char(int(text[i]) + 2);
+		}
+		return text;
+	}
+
+	static string Decrypt_Text(string text)
+	{
+		for (int i = 0; i < text.length(); i++)
+		{
+			text[i] = char(int(text[i]) - 2);
+		}
+		return text;
+	}
 
 };
 
