@@ -90,6 +90,60 @@ public:
 		return word;
 	}
 
+	static string gen_key(type t)
+	{
+		string key = gen_word(t, 4) + " - " + gen_word(t, 4) + " - " + gen_word(t, 4) + " - " + gen_word(t, 4) ;
+		return key;
+	}
+
+	static void gen_keys(type t,int num)
+	{
+		for (int i = 0; i < num; i++)
+		{
+			cout << gen_key(t) << endl;
+		}
+	}
+
+	static void Fill_Array_With_Random_Numbers(int arr[],int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = random_number(0, 1000);
+		}
+	}
+
+	static void Print_Array(int arr[], int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			cout << arr[i] << endl;
+		}
+	}
+
+	static void Print_Array(string arr[], int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			cout << arr[i] << endl;
+		}
+	}
+
+	static void Fill_Array_With_Random_Words(string arr[], int size, type t)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = gen_word(t, 4);
+		}
+	}
+
+	static void Fill_Array_With_Random_Keys(string arr[], int size, type t)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			arr[i] = gen_key(t);
+		}
+	}
+
 
 };
 
