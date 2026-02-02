@@ -235,6 +235,6 @@ public:
 		}
 		return text;
 	}
-
+	
 };
 
